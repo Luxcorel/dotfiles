@@ -1,3 +1,6 @@
+# load auto-completions
+autoload -U compinit; compinit
+
 # alias for intellij
 alias idea="open -na \"IntelliJ IDEA.app\""
 
