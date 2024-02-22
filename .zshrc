@@ -1,9 +1,6 @@
 # alias for intellij
 alias idea="open -na \"IntelliJ IDEA.app\""
 
-# replace cd with zoxide
-eval "$(zoxide init --cmd cd zsh)"
-
 # replace cat with bat
 alias cat=bat
 
@@ -31,3 +28,9 @@ cheat() {
 
   fi
 }
+
+# fzf auto-completion
+source "/opt/homebrew/opt/fzf/shell/completion.zsh"
+
+# replace cd with zoxide
+eval "$(zoxide init --cmd cd zsh)"
