@@ -5,7 +5,7 @@ autoload -U compinit; compinit
 alias idea="open -na \"IntelliJ IDEA.app\""
 
 # replace cat with bat
-alias cat=bat
+alias cat="bat --theme Coldark-Dark"
 
 # nvim alias
 alias vim=nvim
