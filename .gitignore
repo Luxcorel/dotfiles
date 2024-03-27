@@ -1,2 +1,4 @@
 
 .DS_Store
+.config/zed/.*
+.config/zed/embeddings/stable/
