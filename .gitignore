@@ -2,3 +2,5 @@
 .DS_Store
 .config/zed/.*
 .config/zed/embeddings/stable/
+.config/zed/embeddings/semantic-index-db.0.mdb/data.mdb
+.config/zed/embeddings/semantic-index-db.0.mdb/lock.mdb
