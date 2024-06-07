@@ -7,6 +7,17 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "languages": {
+    "C": {
+      "show_inline_completions": false,
+      "formatter": {
+        "external": {
+          "command": "clang-format",
+          "arguments": ["--style=file", "--assume-filename={buffer_path}"]
+        }
+      }
+    }
+  },
   "base_keymap": "JetBrains",
   "telemetry": {
     "diagnostics": false,
