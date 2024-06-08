@@ -10,6 +10,10 @@ alias cat="bat --theme Coldark-Dark"
 # nvim alias
 alias vim=nvim
 
+# macos clipboard aliases
+alias c="tr -d '\n' | pbcopy"
+alias v="pbpaste"
+
 # cheat.sh search
 cheat() {
   # select programming language or command using fzf
