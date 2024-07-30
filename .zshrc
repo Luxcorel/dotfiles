@@ -1,6 +1,10 @@
 # load auto-completions
 autoload -U compinit; compinit
 
+# prompt
+#PS1='%n@%m %1~ %# '
+PS1='%(4c?../%2~?%~) %(!.#.>) '
+
 # alias for intellij
 alias idea="open -na \"IntelliJ IDEA.app\""
 
