@@ -8,6 +8,8 @@
 // from the command palette or from `Zed` application menu.
 {
   "theme": "One Dark",
+  "vim_mode": true,
+  "relative_line_numbers": true,
   "languages": {
     "Go": {
       "show_inline_completions": false
@@ -23,7 +25,6 @@
       }
     }
   },
-  "base_keymap": "None",
   "preview_tabs": {
     "enabled": false
   },
