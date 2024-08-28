@@ -1,3 +1,8 @@
+# --- history ---
+HISTSIZE=100000
+SAVEHIST=100000
+HISTORY_IGNORE="(ls|ls *|ll|ll *|cd|cd *|pwd|exit|date|* --help|* -h|n|nnn|vim|vim *|man *|history|history *|idea|idea *|zed|zed *|mpv|mpv *)"
+
 # --- auto-completions ---
 autoload -U compinit; compinit
 # fzf auto-completion
