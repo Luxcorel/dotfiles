@@ -1,22 +1,25 @@
-# load auto-completions
+# --- auto-completions ---
 autoload -U compinit; compinit
+# fzf auto-completion
+source "/opt/homebrew/opt/fzf/shell/completion.zsh"
 
-# prompt
-#PS1='%n@%m %1~ %# '
-PS1='%(4c?../%2~?%~) %(!.#.>) '
+# --- prompt ---
+#PROMPT='%n@%m %1~ %# '
+PROMPT='%(4c?../%2~?%~) %(!.#.>) '
 
-# alias for intellij
-alias idea="open -na \"IntelliJ IDEA.app\""
-
-# replace cat with bat
-alias cat="bat --theme Coldark-Dark"
-
-# nvim alias
+# --- aliases ---
+alias idea="open -na \"IntelliJ IDEA.app\"" # alias for intellij
+alias cat="bat --theme Coldark-Dark"        # replace cat with bat
 alias vim=nvim
+alias ll="ls -ahlF --color=auto"
+alias grep="grep --color"
+alias c="tr -d '\n' | pbcopy"               # macos clipboard copy
+alias v="pbpaste"                           # macos clipboard paste
 
-# macos clipboard aliases
-alias c="tr -d '\n' | pbcopy"
-alias v="pbpaste"
+# --- env vars ---
+
+
+# --- functions ---
 
 # cheat.sh search
 cheat() {
@@ -39,9 +42,6 @@ cheat() {
 
   fi
 }
-
-# fzf auto-completion
-source "/opt/homebrew/opt/fzf/shell/completion.zsh"
 
 # replace cd with zoxide
 eval "$(zoxide init --cmd cd zsh)"
