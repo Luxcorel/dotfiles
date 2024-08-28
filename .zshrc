@@ -3,6 +3,13 @@ HISTSIZE=100000
 SAVEHIST=100000
 HISTORY_IGNORE="(ls|ls *|ll|ll *|cd|cd *|pwd|exit|date|* --help|* -h|n|nnn|vim|vim *|man *|history|history *|idea|idea *|zed|zed *|mpv|mpv *)"
 
+# --- zsh options ---
+setopt inc_append_history   # continuously append history file entries
+setopt extended_history     # include timestamp + execution time in history file
+setopt hist_ignore_dups     # skip adding history entry if it's the same as the last one
+setopt no_beep              # disable terminal beep
+setopt hist_ignore_space    # exclude commands prefixed with a space
+
 # --- auto-completions ---
 autoload -U compinit; compinit
 # fzf auto-completion
