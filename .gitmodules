@@ -1,0 +1,4 @@
+[submodule "symlinks/.config/nvim"]
+	path = symlinks/.config/nvim
+	url = https://github.com/Luxcorel/nvim-config
+	branch = master
