@@ -1,5 +1,5 @@
 .DS_Store
-.config/zed/.*
-.config/zed/embeddings
-.config/zed/prompts
+symlinks/.config/zed/.*
+symlinks/.config/zed/embeddings
+symlinks/.config/zed/prompts
 Icon[]
