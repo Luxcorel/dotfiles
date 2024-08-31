@@ -8,7 +8,8 @@ setopt inc_append_history   # continuously append history file entries
 setopt extended_history     # include timestamp + execution time in history file
 setopt hist_ignore_dups     # skip adding history entry if it's the same as the last one
 setopt no_beep              # disable terminal beep
-setopt hist_ignore_space    # exclude commands prefixed with a space
+setopt hist_ignore_space    # exclude commands prefixed with a space from history
+setopt hist_reduce_blanks   # exclude newlines from history
 
 # --- auto-completions ---
 autoload -U compinit; compinit
