@@ -31,6 +31,11 @@ alias v="pbpaste"                           # macos clipboard paste
 
 # --- env vars ---
 
+# local config not tracked in git
+if [[ -e ~/.localrc ]]
+then
+  source ~/.localrc
+fi
 
 # --- functions ---
 

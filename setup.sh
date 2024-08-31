@@ -10,5 +10,8 @@ source ~/.zprofile
 # install brewfile
 brew bundle --file=./homebrew/Brewfile
 
+# create .localrc file if it doesn't exist
+touch ~/.localrc
+
 # create symlinks with stow
 cd ./symlinks && stow -t ~/ . && cd ..
