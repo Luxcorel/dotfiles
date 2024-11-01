@@ -380,12 +380,16 @@
 	<string>693959FA-95D3-46D0-B19F-C4480DA42BB2</string>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
+	<key>ForceKeyboard</key>
+	<false/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HideScrollbar</key>
 	<true/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>KeyboardLocale</key>
+	<string>com.apple.keylayout.Swedish-Pro</string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -982,6 +986,8 @@
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
+			<key>Allow Paste Bracketing</key>
+			<false/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -1569,6 +1575,8 @@
 			<string>xterm-256color</string>
 			<key>Transparency</key>
 			<real>0.0039428191489361171</real>
+			<key>Unicode Normalization</key>
+			<integer>0</integer>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -1591,6 +1599,8 @@
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
+			<key>Allow Paste Bracketing</key>
+			<false/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -1756,14 +1766,14 @@
 				<key>Red Component</key>
 				<real>0.20000000000000001</real>
 			</dict>
-			<key>Background Image Location</key>
-			<string></string>
+			<key>Background Image Mode</key>
+			<integer>2</integer>
 			<key>Blend</key>
-			<real>0.5</real>
+			<real>0.069944519927536225</real>
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
-			<true/>
+			<false/>
 			<key>Blur Radius</key>
 			<real>2</real>
 			<key>Bold Color</key>
@@ -2177,6 +2187,8 @@
 			<true/>
 			<key>Normal Font</key>
 			<string>JetBrainsMonoNF-Regular 18</string>
+			<key>Only The Default BG Color Uses Transparency</key>
+			<false/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -2224,7 +2236,7 @@
 			<key>Title Components</key>
 			<integer>4</integer>
 			<key>Transparency</key>
-			<real>0.074649268617021397</real>
+			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
