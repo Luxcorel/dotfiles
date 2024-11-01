@@ -61,5 +61,27 @@ cheat() {
   fi
 }
 
+# pomodoro timer
+pomo() {
+    local work_time=1500 # 25 min
+    local rest_time=300 # 5 min
+    local cycles=${1:-4}
+
+    for ((i=1; i<=cycles; i++)); do
+        echo "Work session $i of $cycles..."
+        shortcuts run "focus_on"
+        sleep "$work_time"
+        osascript -e 'display notification "" with title "Work Timer is up" subtitle "Take a Break!" sound name "Crystal"'
+
+        echo "Rest session $i of $cycles..."
+        shortcuts run "focus_off"
+        sleep "$rest_time"
+        osascript -e 'display notification "" with title "Break is over" subtitle "Back to work!" sound name "Crystal"'
+    done
+
+    shortcuts run "focus_off"
+    osascript -e 'display notification "" with title "Pomodoro Complete" subtitle "Well done!" sound name "Crystal"'
+}
+
 # replace cd with zoxide
 eval "$(zoxide init --cmd cd zsh)"
