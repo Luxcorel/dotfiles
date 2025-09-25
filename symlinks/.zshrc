@@ -47,6 +47,10 @@ autoload -U compinit
 compinit
 have_program fzf && source <(fzf --zsh) # Set up fzf key bindings and fuzzy completion
 
+# --- keybinds ---
+bindkey '^p' history-search-backward # type command and press CTRL+P to see previous usage
+bindkey '^n' history-search-forward
+
 # --- aliases ---
 have_mac && {
   alias idea="open -na \"IntelliJ IDEA.app\"" # alias for intellij
