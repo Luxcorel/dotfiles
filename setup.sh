@@ -1,18 +1,88 @@
 #!/usr/bin/env bash
 
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+IFS=$'\n\t'
+set -euo pipefail
+
+# --- utility Functions ---
+log_info() { echo -e "\033[1;32m==>\033[0m $*"; }
+log_warn() { echo -e "\033[1;33m[WARN]\033[0m $*"; }
+log_error() { echo -e "\033[1;31m[ERROR]\033[0m $*" >&2; }
+
+# trap errors to display a message before exiting
+trap 'log_error "Script failed at line $LINENO. Exiting..."' ERR
+
+# run script from its directory
+cd "$(dirname "$0")"
+
+# --- OS check ---
+case "$(uname -s | tr '[:upper:]' '[:lower:]')" in
+darwin)
+	log_info "Running on macOS."
+	;;
+*)
+	log_error "Not running on macOS."
+	# shellcheck disable=SC2317 # fallback to exit if the script was not sourced
+	return 1 || exit 1
+	;;
+esac
+
 # install homebrew (should automatically install xcode command line tools)
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if ! command -v brew &>/dev/null; then
+	log_info "Installing Homebrew..."
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+	log_info "Homebrew was already installed."
+fi
 
-# set up homebrew for apple silicon
-echo "# Set PATH, MANPATH, etc., for Homebrew." >>~/.zprofile
-echo "eval \"\$(/opt/homebrew/bin/brew shellenv)\"" >>~/.zprofile
-source ~/.zprofile
+# set up homebrew for Apple Silicon, if not already configured
+if ! grep -q '/opt/homebrew/bin/brew shellenv' ~/.zprofile 2>/dev/null; then
+	log_info "Configuring Homebrew environment..."
+	echo "# Set PATH, MANPATH, etc., for Homebrew." >>~/.zprofile
+	echo "eval \"\$(/opt/homebrew/bin/brew shellenv)\"" >>~/.zprofile
+	source ~/.zprofile
+fi
 
-# install programs according to brewfile
-brew bundle --file=./homebrew/Brewfile
+# update brew and upgrade packages
+log_info "Updating Homebrew..."
+brew update && brew upgrade
 
-# create .localrc file
-touch ~/.localrc
+# install programs using brewfile
+if [[ -f ./homebrew/Brewfile ]]; then
+	log_info "Installing from Brewfile..."
+	brew bundle --file=./homebrew/Brewfile
+else
+	log_warn "No Brewfile found at ./homebrew/Brewfile"
+fi
 
-# create symlinks with stow
-stow -t ~/ ./symlinks
+# tweaks for dock: https://apple.stackexchange.com/a/298826
+log_info "Applying Dock tweaks..."
+# autohide dock
+defaults write com.apple.dock autohide -bool true
+# defaults write com.apple.dock autohide -bool false
+
+# disable peeking
+defaults write com.apple.dock autohide-delay -float 1000
+# defaults delete com.apple.dock autohide-delay
+
+# disable icon bouncing
+defaults write com.apple.dock no-bouncing -bool TRUE
+# defaults write com.apple.dock no-bouncing -bool FALSE
+
+killall Dock || true
+
+# create .localrc file if it doesn’t exist
+[[ -f ~/.localrc ]] || {
+	log_info "Creating ~/.localrc"
+	touch ~/.localrc
+}
+
+# use stow for symlinks if installed
+if command -v stow &>/dev/null; then
+	log_info "Creating symlinks with stow..."
+	stow -t ~/ ./symlinks
+else
+	log_warn "GNU Stow not found. Skipping symlink setup."
+fi
+
+log_info "Setup complete!"
