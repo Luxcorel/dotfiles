@@ -4,7 +4,7 @@
 IFS=$'\n\t'
 set -euo pipefail
 
-# --- utility Functions ---
+# --- utility functions ---
 log_info() { echo -e "\033[1;32m==>\033[0m $*"; }
 log_warn() { echo -e "\033[1;33m[WARN]\033[0m $*"; }
 log_error() { echo -e "\033[1;31m[ERROR]\033[0m $*" >&2; }
@@ -27,7 +27,7 @@ darwin)
 	;;
 esac
 
-# install homebrew (should automatically install xcode command line tools)
+# install homebrew
 if ! command -v brew &>/dev/null; then
 	log_info "Installing Homebrew..."
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -69,6 +69,7 @@ defaults write com.apple.dock autohide-delay -float 1000
 defaults write com.apple.dock no-bouncing -bool TRUE
 # defaults write com.apple.dock no-bouncing -bool FALSE
 
+# restart dock
 killall Dock || true
 
 # create .localrc file if it doesn’t exist
