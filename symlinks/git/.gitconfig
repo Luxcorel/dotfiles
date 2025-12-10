@@ -1,0 +1,28 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[user]
+	name = Johannes Rosengren
+	email = 98045373+Luxcorel@users.noreply.github.com
+
+[core]
+	editor = nvim
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
+[init]
+    defaultBranch = main
+
+[push]
+    autoSetupRemote = true
+
+[alias]
+    s = status
+    c = commit
+    l = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    last = log -1 HEAD --stat
+    undo = reset HEAD~1
