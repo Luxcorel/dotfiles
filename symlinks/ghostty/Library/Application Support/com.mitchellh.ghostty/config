@@ -1,0 +1,13 @@
+keybind = global:command+ö=toggle_quick_terminal
+
+font-size = 18
+theme = Catppuccin Macchiato
+font-feature = -calt # disable ligatures
+
+window-save-state = always
+macos-non-native-fullscreen = true
+fullscreen = true
+
+quick-terminal-animation-duration = 0
+quick-terminal-autohide = false
+quick-terminal-space-behavior = remain
