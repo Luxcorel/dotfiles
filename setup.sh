@@ -79,11 +79,34 @@ killall Dock || true
 }
 
 # use stow for symlinks if installed
-if command -v stow &>/dev/null; then
-	log_info "Creating symlinks with stow..."
-	stow -t ~/ ./symlinks
-else
-	log_warn "GNU Stow not found. Skipping symlink setup."
-fi
+setup_symlinks() {
+	log_info "Starting symlink setup..."
+
+	if ! command -v stow &>/dev/null; then
+		log_warn "GNU Stow is not installed. Skipping."
+		return 0
+	fi
+
+	if [[ ! -d "./symlinks" ]]; then
+		log_warn "Directory ./symlinks/ not found. Skipping."
+		return 0
+	fi
+
+	for package_path in ./symlinks/*; do
+		if [[ ! -d "$package_path" ]]; then
+			continue
+		fi
+
+		local package_name
+		package_name=$(basename "$package_path")
+
+		log_info "Linking package: $package_name"
+
+		if ! stow -d symlinks -t "$HOME" "$package_name"; then
+			log_error "Stow failed for package '$package_name'"
+		fi
+	done
+}
+setup_symlinks
 
 log_info "Setup complete!"
