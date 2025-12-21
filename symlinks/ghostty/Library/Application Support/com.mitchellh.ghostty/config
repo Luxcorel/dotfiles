@@ -2,7 +2,7 @@ keybind = global:command+ö=toggle_quick_terminal
 
 font-size = 18
 theme = Catppuccin Macchiato
-font-feature = -calt # disable ligatures
+font-feature = -calt
 
 window-save-state = always
 macos-non-native-fullscreen = true
