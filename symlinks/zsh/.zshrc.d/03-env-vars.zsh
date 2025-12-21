@@ -3,6 +3,10 @@ export LANG="en_US.UTF-8"
 is_installed nvim && export EDITOR=nvim
 is_installed nvim && export VISUAL=nvim
 
+is_installed fnm && {
+	eval "$(fnm env --shell zsh)"
+}
+
 is_macos && {
   export PNPM_HOME="$HOME/Library/pnpm"
   if [ -d "$PNPM_HOME" ]; then
