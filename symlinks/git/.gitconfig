@@ -11,8 +11,11 @@
 [core]
 	editor = nvim
 
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+[url "git@github.com:Luxcorel/"]
+	insteadOf = https://github.com/Luxcorel/
+
+[url "git@github.com:luxcorel/"]
+	insteadOf = https://github.com/luxcorel/
 
 [init]
     defaultBranch = main
