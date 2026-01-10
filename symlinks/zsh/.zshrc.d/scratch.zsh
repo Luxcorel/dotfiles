@@ -12,5 +12,5 @@ tmp() {
     local filename="scratch-$(date +'%Y-%m-%d-%H%M%S').$filetype"
     local filepath="$scratch_dir/$filename"
 
-    nvim "$filepath" +startinsert
+    nvim "$filepath"
 }
