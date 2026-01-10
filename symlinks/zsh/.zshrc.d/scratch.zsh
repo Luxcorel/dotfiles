@@ -1,4 +1,6 @@
-is_macos || return
+is_installed nvim || {
+    return
+}
 
 tmp() {
     local scratch_dir="$HOME/.scratch"
