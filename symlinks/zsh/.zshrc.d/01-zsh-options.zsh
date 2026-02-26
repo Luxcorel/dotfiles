@@ -10,6 +10,7 @@ setopt hist_reduce_blanks # exclude newlines from history
 export HISTSIZE=100000
 export SAVEHIST=100000
 export HISTORY_IGNORE="(ls|ls *|ll|ll *|cd|cd *|pwd|exit|bye|zellij|date|* --help|* -h|n|nnn|vim|vim *|man *|history|history *|idea|idea *|zed|zed *|mpv|mpv *|fg|fg *|clear|gg|gg *|iina|iina *)"
+export HISTFILE="$HOME/.zsh_history"
 
 # --- prompt ---
 #default prompt: '%n@%m %1~ %# '
