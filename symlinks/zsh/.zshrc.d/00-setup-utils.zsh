@@ -25,3 +25,10 @@ is_macos() {
   fi
 }
 
+is_linux() {
+  if [ "$RUNNING_ON" = "linux" ]; then
+    return 0
+  else
+    return 1
+  fi
+}
