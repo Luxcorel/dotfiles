@@ -7,6 +7,8 @@ is_installed fnm && {
 	eval "$(fnm env --shell zsh)"
 }
 
+is_installed cargo && export PATH="$HOME/.cargo/bin:$PATH"
+
 is_macos && {
 	if [ -d "$HOME/Library/pnpm" ]; then
 		export PNPM_HOME="$HOME/Library/pnpm"
