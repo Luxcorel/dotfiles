@@ -5,7 +5,6 @@ font-feature = -calt
 
 window-save-state = always
 macos-non-native-fullscreen = true
-fullscreen = true
 
 quick-terminal-animation-duration = 0
 quick-terminal-autohide = false
