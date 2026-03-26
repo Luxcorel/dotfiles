@@ -1,8 +1,8 @@
 # --- aliases ---
 is_macos && {
   alias idea="open -na \"IntelliJ IDEA.app\"" # alias for intellij
-  alias c="tr -d '\n' | pbcopy"               # macos clipboard copy
-  alias v="pbpaste"                           # macos clipboard paste
+  alias C="tr -d '\n' | pbcopy"               # macos clipboard copy
+  alias V="pbpaste"                           # macos clipboard paste
 }
 
 is_linux && {
