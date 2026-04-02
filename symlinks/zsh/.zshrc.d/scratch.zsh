@@ -9,7 +9,8 @@ tmp() {
     fi
 
     local filetype="${1:-txt}"
-    local filename="scratch-$(date +'%Y-%m-%d-%H%M%S').$filetype"
+    local filename
+    filename="scratch-$(date +'%Y-%m-%d-%H%M%S').$filetype"
     local filepath="$scratch_dir/$filename"
 
     nvim "$filepath"
