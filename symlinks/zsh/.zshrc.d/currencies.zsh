@@ -16,11 +16,7 @@ currency() {
   fi
 
   # copy currency code
-  if [ "$RUNNING_ON" = "mac" ]; then
-    printf "Copied: "
-    echo "$choice" | cut -f 1 | tee -a /dev/tty | c
-  elif [ "$RUNNING_ON" = "linux" ]; then
-    echo "TODO: Implement copy on linux"
-  fi
+  printf "Copied: "
+  echo "$choice" | cut -f 1 | tee -a /dev/tty | C
 }
 
