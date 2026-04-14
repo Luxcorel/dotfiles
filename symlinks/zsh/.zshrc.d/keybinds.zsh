@@ -12,3 +12,7 @@ is_installed gg && {
 	# [<CTRL>+gg]: gg
 	bindkey -s '^g^g' 'gg\n'
 }
+
+# --- Ghostty ---
+bindkey "^[[1;5C" forward-word   # Ctrl+Right
+bindkey "^[[1;5D" backward-word  # Ctrl+Left
