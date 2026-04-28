@@ -7,7 +7,8 @@ todo() {
     fi
 
     local filename
-    case "$1" in
+    local input="$1"
+    case "$input" in
     +1)
         filename="todo-$(date -v +1d +'%Y-%m-%d').txt" || return 1
         ;;
@@ -15,7 +16,11 @@ todo() {
         filename="todo-$(date -v -1d +'%Y-%m-%d').txt" || return 1
         ;;
     *)
-        filename="todo-$(date +'%Y-%m-%d').txt" || return 1
+        if [ "$input" ]; then
+            filename="todo-$input.txt"
+        else
+            filename="todo-$(date +'%Y-%m-%d').txt" || return 1
+        fi
         ;;
     esac
 
