@@ -21,6 +21,11 @@ is_macos && {
 }
 
 is_linux && {
+	case ":$PATH:" in
+	  *":$HOME/.local/bin:"*) ;;
+	  *) export PATH="$PATH:$HOME/.local/bin" ;;
+	esac
+
 	if [ -d "$HOME/.local/share/pnpm" ]; then
 		export PNPM_HOME="$HOME/.local/share/pnpm"
 		case ":$PATH:" in
