@@ -1,0 +1,8 @@
+binds {
+    Super+S repeat=false hotkey-overlay-title="Dictation: Start / Stop" {
+        spawn "~/.local/bin/handy-local" "--toggle-transcription";
+    }
+    Super+X repeat=false hotkey-overlay-title="Dictation: Cancel" {
+        spawn "~/.local/bin/handy-local" "--cancel";
+    }
+}
