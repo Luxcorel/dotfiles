@@ -1,0 +1,20 @@
+binds {
+    Super+Shift+1 repeat=false hotkey-overlay-title="App: Zen" {
+        spawn "~/.config/niri/apps/focus-or-launch.sh" "app.zen_browser.zen" "gtk-launch" "app.zen_browser.zen";
+    }
+    Super+Shift+2 repeat=false hotkey-overlay-title="App: Helium" {
+        spawn "~/.config/niri/apps/focus-or-launch.sh" "helium" "gtk-launch" "helium";
+    }
+    Super+Shift+3 repeat=false hotkey-overlay-title="App: Discord" {
+        spawn "~/.config/niri/apps/focus-or-launch.sh" "discord" "gtk-launch" "discord";
+    }
+    Super+Shift+5 repeat=false hotkey-overlay-title="App: Ghostty" {
+        spawn "~/.config/niri/apps/focus-or-launch.sh" "com.mitchellh.ghostty" "gtk-launch" "com.mitchellh.ghostty";
+    }
+    Super+Shift+6 repeat=false hotkey-overlay-title="App: T3 Code" {
+        spawn "~/.config/niri/apps/focus-or-launch.sh" "com.t3tools.T3Code" "gtk-launch" "t3code";
+    }
+    Super+Shift+0 repeat=false hotkey-overlay-title="App: KeePassXC" {
+        spawn "~/.config/niri/apps/focus-or-launch.sh" "org.keepassxc.KeePassXC" "gtk-launch" "org.keepassxc.KeePassXC";
+    }
+}

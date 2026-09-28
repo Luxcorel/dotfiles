@@ -643,3 +643,4 @@ binds {
 }
 
 include "handy/binds.kdl"
+include "apps/binds.kdl"
