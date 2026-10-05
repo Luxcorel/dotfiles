@@ -648,3 +648,4 @@ include "dms/layout.kdl"
 
 include "handy/binds.kdl"
 include "apps/binds.kdl"
+include "hacks/kwallet.kdl"

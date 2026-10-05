@@ -1,0 +1,2 @@
+// Unlock KWallet on login: https://github.com/KDE/kwallet-pam
+spawn-at-startup "systemctl" "--user" "start" "plasma-kwallet-pam.service"
