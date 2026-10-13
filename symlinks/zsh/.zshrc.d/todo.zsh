@@ -70,8 +70,8 @@ todoi() {
         mkdir -p "$todo_dir" || return 1
     fi
 
-    local selected_todo=$(ls "$todo_dir" | sort --reverse | fzf --reverse)
-    test -f "$todo_dir/$selected_todo" || return 1
+    local selected_todo=$(find "$todo_dir" -type f | sort --reverse | fzf --reverse --delimiter='/' --with-nth=-1 --preview 'cat {}')
+    test -f "$selected_todo" || return 1
 
-    nvim --noplugin "$todo_dir/$selected_todo"
+    nvim --noplugin "$selected_todo"
 }
